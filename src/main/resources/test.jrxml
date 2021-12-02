@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="2 columns" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="308cb8ae-e40a-45f4-a347-c6fcdad320b1">
+    <subDataset name="Dataset" uuid="ad0d45f0-00f0-495c-bff4-ae70340e05d4">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="_THIS" class="java.lang.String"/>
+    </subDataset>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <summary>
+        <band height="30">
+            <componentElement>
+                <reportElement x="0" y="0" width="550" height="30" uuid="f811df99-b6ad-4157-a818-42ed4b77c2f0"/>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
+                    <datasetRun subDataset="Dataset" uuid="30dc2e8a-06f9-4ecf-aa8d-66d5edd6fb95">
+                        <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(java.util.Arrays.asList("Item1;Item2;Item3;Item4".split(";")))]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="30" width="275">
+                        <textField>
+                            <reportElement x="0" y="0" width="270" height="30" uuid="2500a411-7ad6-4148-958f-34dfae2c9346"/>
+                            <textElement verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{_THIS}]]></textFieldExpression>
+                        </textField>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
+        </band>
+    </summary>
+</jasperReport>
