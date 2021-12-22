@@ -1,8 +1,6 @@
 package com.jasper.report.controller;
 
-import com.jasper.report.service.EmployeeReportService;
-import com.jasper.report.service.JasperMultipleDataSourcesService;
-import com.jasper.report.service.TransactionReportService;
+import com.jasper.report.service.*;
 import lombok.AllArgsConstructor;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +16,8 @@ public class ReportController {
 	private EmployeeReportService employeeReportService;
 	private JasperMultipleDataSourcesService jasperMultipleDataSourcesService;
 	private TransactionReportService transactionReportService;
+	private HoldingInfoReportService holdingInfoReportService;
+	private AccountTransactionService accountTransactionService;
 
 	@GetMapping("employee/report")
 	public String empReport() {
@@ -33,4 +33,15 @@ public class ReportController {
 	public String transactionDataSourceReport() throws JRException {
 		return transactionReportService.generateReport();
 	}
+
+	@GetMapping("holdingInfo_report")
+	public String generateHoldingInfoReport() throws JRException {
+		return holdingInfoReportService.generateReport();
+	}
+
+	@GetMapping("account_position")
+	public String generateAccountPosition() throws JRException {
+		return accountTransactionService.generateReport();
+	}
+
 }

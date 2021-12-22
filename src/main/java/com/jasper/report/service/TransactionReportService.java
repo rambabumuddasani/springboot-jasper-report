@@ -6,10 +6,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class TransactionReportService {
@@ -38,6 +35,7 @@ public class TransactionReportService {
     public String generateReport() {
         try {
             String reportPath = "D:\\proctise\\jasper\\springboot-jasper-report\\src\\main\\resources";
+  //          transactionDetailsList.sort(Comparator.comparing(TransactionDetails::getTitle));
             // Compile the Jasper report from .jrxml to .japser
             JasperReport jasperReport = JasperCompileManager.compileReport(reportPath + "\\transaction_groupby.jrxml");
             // Get your data source

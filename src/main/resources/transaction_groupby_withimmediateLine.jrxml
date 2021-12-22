@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="groupBy" pageWidth="1342" pageHeight="595" orientation="Landscape" columnWidth="1342" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2aaf6b6-41fc-4514-89c0-55a2e792a033">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="new" pageWidth="1342" pageHeight="595" orientation="Landscape" columnWidth="1342" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2aaf6b6-41fc-4514-89c0-55a2e792a033">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<queryString language="SQL">
@@ -57,10 +57,11 @@
 	<variable name="totalNetAmt" class="java.lang.Integer" resetType="Group" resetGroup="groupTitle" calculation="Sum">
 		<variableExpression><![CDATA[$F{netAmount}]]></variableExpression>
 	</variable>
-	<group name="groupTitle" keepTogether="true" preventOrphanFooter="true">
+	<group name="groupTitle">
 		<groupExpression><![CDATA[$F{title}]]></groupExpression>
 		<groupFooter>
 			<band height="30">
+				<printWhenExpression><![CDATA[$V{groupTitle_COUNT}>1]]></printWhenExpression>
 				<textField>
 					<reportElement x="407" y="-1" width="191" height="30" uuid="44e3387e-e7ca-4590-9385-d2166354e328">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fbbdfb2-6bc1-44f7-a6c0-937e718a4478"/>
@@ -173,15 +174,19 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="1342" height="79" uuid="67b01e4f-d4dc-4fd9-9663-6b3ee7fe6d34"/>
+				<reportElement x="20" y="-10" width="1300" height="50" uuid="67b01e4f-d4dc-4fd9-9663-6b3ee7fe6d34"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Transaction Report]]></text>
 			</staticText>
 		</band>
-	</title>
+	</pageHeader>
 	<columnHeader>
 		<band height="31" splitType="Stretch">
 			<staticText>
@@ -292,7 +297,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="29" splitType="Prevent">
+		<band height="29" splitType="Stretch">
 			<staticText>
 				<reportElement x="20" y="0" width="1" height="29" uuid="5777b380-4118-4a01-b0c1-3a3bfdbec56b">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -318,8 +323,8 @@
 				<box leftPadding="10">
 					<pen lineWidth="0.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -420,4 +425,7 @@
 			</textField>
 		</band>
 	</detail>
+	<pageFooter>
+		<band height="52"/>
+	</pageFooter>
 </jasperReport>

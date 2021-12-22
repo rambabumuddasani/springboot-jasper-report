@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="groupBy" pageWidth="1342" pageHeight="595" orientation="Landscape" columnWidth="1342" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2aaf6b6-41fc-4514-89c0-55a2e792a033">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="new" pageWidth="1342" pageHeight="595" orientation="Landscape" columnWidth="1342" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2aaf6b6-41fc-4514-89c0-55a2e792a033">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<queryString language="SQL">
@@ -292,7 +292,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="29" splitType="Prevent">
+		<band height="29" splitType="Stretch">
 			<staticText>
 				<reportElement x="20" y="0" width="1" height="29" uuid="5777b380-4118-4a01-b0c1-3a3bfdbec56b">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
